@@ -12,6 +12,7 @@ function Main({
   cards,
 }) {
   const currentUser = React.useContext(CurrentUserContext);
+  console.log(cards);
   return (
     <main className="content page__content">
       <section className="profile content__profile">
@@ -39,7 +40,7 @@ function Main({
       </section>
       <section className="cards content__cards">
         <ul className="cards__list">
-          {cards.data && cards.data.map((card) => (
+          {cards && cards.map((card) => (
             <Card
               card={card}
               key={card._id}

@@ -80,7 +80,8 @@ function App() {
   React.useEffect(() => {
     api
       .getCurrentUser()
-      .then(({ name, about, avatar, _id }) => {
+      .then((res) => {
+        const { name, about, avatar, _id } = res.data;
         setCurrentUser({
           userName: name,
           userDescription: about,
@@ -95,7 +96,7 @@ function App() {
     api
       .getInitialCards()
       .then((answer) => {
-        setCards(answer);
+        setCards(answer.data.reverse());
       })
       .catch((err) => console.log(err));
   }, []);
@@ -155,7 +156,8 @@ function App() {
   function handleUpdateAvatar(avatarRef) {
     api
       .avatarChange(avatarRef.current.value)
-      .then(({ name, about, _id, avatar }) => {
+      .then((res) => {
+        const {name, about, _id, avatar} = res.data;
         setCurrentUser({
           userName: name,
           userDescription: about,
@@ -172,7 +174,7 @@ function App() {
     api
       .addNewCard({ name, link })
       .then((newCard) => {
-        setCards([newCard, ...cards]);
+        setCards([newCard.data, ...cards]);
         closeAllPopups();
       })
       .catch((err) => console.log(err));
