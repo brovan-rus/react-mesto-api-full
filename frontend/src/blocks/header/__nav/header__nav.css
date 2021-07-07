@@ -1,0 +1,8 @@
+.header__nav {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: min-content min-content;
+  grid-template-rows: min-content;
+  align-items: center;
+  width: 100%;
+}

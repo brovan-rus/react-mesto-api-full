@@ -1,0 +1,9 @@
+.user-form_place_register {
+  margin-bottom: 80px;
+}
+
+@media screen and (max-width: 590px) {
+  .user-form_place_register{
+    margin-bottom: 40px;
+  }
+}

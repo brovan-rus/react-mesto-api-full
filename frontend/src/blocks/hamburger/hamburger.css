@@ -1,0 +1,13 @@
+.hamburger {
+  display: none;
+  width: 24px;
+  cursor: pointer;
+
+}
+
+@media screen and (max-width: 590px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+  }
+}

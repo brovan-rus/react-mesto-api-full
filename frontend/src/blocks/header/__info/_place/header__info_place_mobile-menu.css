@@ -1,0 +1,26 @@
+@media screen and (max-width: 590px){
+  .header__info_place_mobile-menu {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: min-content min-content;
+    row-gap: 18px;
+    grid-row: 1/1;
+    grid-column: 1/3;
+    justify-self: center;
+    align-self: start;
+    justify-items: center;
+    padding: 12px 0 40px 0;
+    box-sizing: border-box;
+  }
+
+  .header__info_place_mobile-menu::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 0;
+    border-bottom: 1px solid rgba(84,84,84,.7);
+  }
+
+}

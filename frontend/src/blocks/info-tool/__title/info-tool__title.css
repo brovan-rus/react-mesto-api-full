@@ -1,0 +1,16 @@
+.info-tool__title {
+  margin: 0;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+}
+
+@media screen and (max-width: 520px) {
+  .info-tool__title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

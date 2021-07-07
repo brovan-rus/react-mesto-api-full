@@ -1,0 +1,7 @@
+@media screen and (max-width: 590px) {
+  .header__info_place_main {
+    display: none;
+  }
+}
+
+

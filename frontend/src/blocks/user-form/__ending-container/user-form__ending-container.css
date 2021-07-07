@@ -1,0 +1,6 @@
+.user-form__ending-container{
+  display: flex;
+  margin: auto;
+  padding-top: 15px;
+  box-sizing: border-box;
+}

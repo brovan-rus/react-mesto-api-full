@@ -1,0 +1,33 @@
+.user-form__input{
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #CCCCCC;
+  outline: none;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #CCCCCC;
+  margin-bottom: 30px;
+  padding: 0 0 13px 0;
+}
+
+.user-form__input:last-of-type{
+  margin-bottom: 216px;
+}
+
+.user-form__input::placeholder{
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #CCCCCC;
+}
+
+@media screen and (max-width: 590px) {
+  .user-form__input:last-of-type{
+    margin-bottom: 173px;
+  }
+}

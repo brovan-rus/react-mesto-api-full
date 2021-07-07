@@ -1,0 +1,11 @@
+.card{
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 282px 1fr;
+  position: relative;
+  overflow: hidden;
+}

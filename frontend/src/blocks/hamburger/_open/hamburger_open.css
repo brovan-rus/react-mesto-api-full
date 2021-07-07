@@ -1,0 +1,7 @@
+.hamburger_open {
+  background-image: url('../../../images/hamburger-cose-icon.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}

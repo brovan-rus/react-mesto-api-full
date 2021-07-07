@@ -1,0 +1,9 @@
+.hamburger__line{
+  height: 3px;
+  background-color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.hamburger__line:last-child{
+  margin-bottom: 0;
+}

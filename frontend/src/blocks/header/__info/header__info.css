@@ -1,0 +1,7 @@
+.header__info {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  align-items: center;
+}
+
