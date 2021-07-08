@@ -3,17 +3,17 @@ import Main from "./Main";
 import Footer from "./Footer";
 import React from "react";
 import ImagePopup from "./ImagePopup";
-import { CurrentUserContext } from "../contexts/CurrentUserContext";
+import {CurrentUserContext} from "../contexts/CurrentUserContext";
 import Api from "../utils/api";
 import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
 import CardDelApprovePopup from "./CardDelApprovePopup";
-import { Route, Switch, Link, useHistory } from "react-router-dom";
+import {Route, Switch, Link, useHistory} from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 import Login from "./Login";
 import Register from "./Register";
-import { signIn, signUp, checkAuth } from "../utils/auth";
+import {signIn, signUp, checkAuth} from "../utils/auth";
 import InfoTooltip from "./InfoTooltip";
 import {apiUrl} from "../utils/constants";
 
@@ -32,7 +32,7 @@ function App() {
   const [isRegistrationSuccess, setIsRegistrationSuccess] = React.useState(
     false
   );
-  const [selectedCard, setSelectedCard] = React.useState({ isOpened: false });
+  const [selectedCard, setSelectedCard] = React.useState({isOpened: false});
   const [currentUser, setCurrentUser] = React.useState({
     userName: "Загрузка...",
     userDescription: "Загрузка...",
@@ -47,14 +47,15 @@ function App() {
 
   const handleCardLike = (card) => {
     const isLikedByMe = card.likes.some(
-      (like) => like._id === currentUser.userId
+      (like) => like === currentUser.userId
     );
     api
       .changeLikeCardStatus(card._id, isLikedByMe)
-      .then((newCard) =>
-        setCards((state) =>
-          state.map((c) => (c._id === card._id ? newCard : c))
-        )
+      .then((res) => {
+          const newCard = res.data;
+          setCards((state) => state.map((c) => (c._id === card._id ? newCard : c))
+          )
+        }
       )
       .catch((err) => console.log(err));
   };
@@ -81,7 +82,7 @@ function App() {
     api
       .getCurrentUser()
       .then((res) => {
-        const { name, about, avatar, _id } = res.data;
+        const {name, about, avatar, _id} = res.data;
         setCurrentUser({
           userName: name,
           userDescription: about,
@@ -90,7 +91,7 @@ function App() {
         });
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [isLoggedIn]);
 
   React.useEffect(() => {
     api
@@ -130,23 +131,23 @@ function App() {
     setIsAddPlacePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
     setIsCardDelApprovePopup(false);
-    setSelectedCard({ isOpened: false });
+    setSelectedCard({isOpened: false});
     setIsInfoTooltipPopupOpen(false);
   }
 
   function handleCardClick(card) {
-    setSelectedCard({ ...card, isOpened: true });
+    setSelectedCard({...card, isOpened: true});
   }
 
   function handleUpdateUser(name, description) {
     api
-      .setCurrentUser({ userName: name, userDescription: description })
-      .then(({ name, about, avatar, _id }) => {
+      .setCurrentUser({userName: name, userDescription: description})
+      .then((res) => {
+        const {name, about} = res.data;
         setCurrentUser({
+          ...currentUser,
           userName: name,
           userDescription: about,
-          userId: _id,
-          userAvatar: avatar,
         });
         closeAllPopups();
       })
@@ -157,12 +158,9 @@ function App() {
     api
       .avatarChange(avatarRef.current.value)
       .then((res) => {
-        const {name, about, _id, avatar} = res.data;
-        setCurrentUser({
-          userName: name,
-          userDescription: about,
+        const avatar = res.data;
+        setCurrentUser({... currentUser,
           userAvatar: avatar,
-          userId: _id,
         });
         avatarRef.current.value = "";
         closeAllPopups();
@@ -172,7 +170,7 @@ function App() {
 
   function handleCardAdd(name, link) {
     api
-      .addNewCard({ name, link })
+      .addNewCard({name, link})
       .then((newCard) => {
         setCards([newCard.data, ...cards]);
         closeAllPopups();
@@ -236,10 +234,10 @@ function App() {
               onCardLike={handleCardLike}
               onCardDelete={handleCardDelApprove}
             />
-            <Footer />
+            <Footer/>
           </ProtectedRoute>
           <Route loggedIn={isLoggedIn} path="/sign-up">
-            <Header linkText="Войти" link="/sign-in" />
+            <Header linkText="Войти" link="/sign-in"/>
             <Register
               title="Регистрация"
               buttonText="Зарегистрироваться"
@@ -247,8 +245,8 @@ function App() {
             />
           </Route>
           <Route path="/sign-in">
-            <Header linkText="Регистрация" link="/sign-up" />
-            <Login title="Вход" buttonText="Войти" onLogin={handleLogin} />
+            <Header linkText="Регистрация" link="/sign-up"/>
+            <Login title="Вход" buttonText="Войти" onLogin={handleLogin}/>
           </Route>
           <ProtectedRoute path="*" loggedIn={isLoggedIn}>
             <h1>Ошибка 404</h1>
@@ -277,7 +275,7 @@ function App() {
           card={deletingCard}
           onCardDel={handleCardDelete}
         />
-        <ImagePopup card={selectedCard} onClose={closeAllPopups} />
+        <ImagePopup card={selectedCard} onClose={closeAllPopups}/>
         <InfoTooltip
           isOpen={isInfoTooltipPopupOpen}
           onClose={closeAllPopups}

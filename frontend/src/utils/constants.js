@@ -1,3 +1,3 @@
 // Данные для работы с API
-export const apiUrl = "http://api.project-mesto-brovan.nomoredomains.club";
-export const cohort = 22;
+export const apiUrl = "https://api.project-mesto-brovan.nomoredomains.club";
+// export const apiUrl = "http://localhost:3000";
