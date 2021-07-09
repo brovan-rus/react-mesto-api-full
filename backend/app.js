@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 const auth = require('./middlewares/auth');
 const userRoutes = require('./routes/user');
 const cardRoutes = require('./routes/card');
@@ -13,14 +14,37 @@ const NotFoundError = require('./errors/NotFoundError');
 const { validateLoginRequest, validateRegisterRequest } = require('./middlewares/validate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
+const whitelist = [
+  'http://localhost:3000',
+  'https://localhost:3000',
+  'http://project-mesto-brovan.nomoredomains.club',
+  'https://project-mesto-brovan.nomoredomains.club',
+];
+
+const corsOptions = {
+  origin(origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
 const port = process.env.PORT || 3000;
 const app = express();
 
+app.use(cors(corsOptions));
 app.use(helmet());
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(requestLogger);
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 app.post('/signin', validateLoginRequest, login);
 app.post('/signup', validateRegisterRequest, createUser);
 app.use(auth);

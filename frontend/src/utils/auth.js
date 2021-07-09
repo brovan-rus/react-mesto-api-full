@@ -1,7 +1,7 @@
 import { handleResponse } from "./utils";
 
-export const BASE_URL = "https://api.project-mesto-brovan.nomoredomains.club";
-// export const BASE_URL = "http://localhost:3000";
+// export const BASE_URL = "https://api.project-mesto-brovan.nomoredomains.club";
+export const BASE_URL = "http://localhost:3000";
 
 export const signIn = (email, password) => {
   return fetch(`${BASE_URL}/signin`, {

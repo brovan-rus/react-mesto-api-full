@@ -40,10 +40,10 @@ const createUser = (req, res, next) => {
 };
 
 const updateProfile = (req, res, next) => {
-  const { about } = req.body;
-  User.updateOne({ _id: req.user }, { about }, { runValidators: true, new: true })
+  const { name, about } = req.body;
+  User.updateOne({ _id: req.user }, { name, about }, { runValidators: true, new: true })
     .orFail(() => new NotFoundError('Запрашиваемый пользователь не найден'))
-    .then((updatedUser) => res.status(200).send({ data: updatedUser }))
+    .then(() => res.status(200).send({ data: { name, about } }))
     .catch(next);
 };
 
@@ -51,7 +51,7 @@ const updateAvatar = (req, res, next) => {
   const { avatar } = req.body;
   User.updateOne({ _id: req.user }, { avatar }, { runValidators: true, new: true })
     .orFail(() => new NotFoundError('Запрашиваемый пользователь не найден'))
-    .then((updatedUser) => res.status(200).send({ data: updatedUser }))
+    .then(() => res.status(200).send({ data: avatar }))
     .catch(next);
 };
 

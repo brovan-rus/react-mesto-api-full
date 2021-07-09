@@ -25,16 +25,24 @@ const deleteCard = (req, res, next) => {
 };
 
 const likeCard = (req, res, next) => {
-  Card.updateOne({ _id: req.params.cardId }, { $addToSet: { likes: req.user._id } }, { new: true })
+  Card.updateOne({ _id: req.params.cardId }, { $addToSet: { likes: req.user } }, { new: true })
     .orFail(() => new NotFoundError('Запрашиваемая карточка не найдена'))
-    .then(() => res.status(201).send({ message: 'Лайк поставлен' }))
+    .then(() => {
+      Card.findOne({ _id: req.params.cardId }).then((updatedCard) => {
+        res.status(201).send({ data: updatedCard });
+      });
+    })
     .catch(next);
 };
 
 const dislikeCard = (req, res, next) => {
-  Card.updateOne({ _id: req.params.cardId }, { $pull: { likes: req.user._id } }, { new: true })
+  Card.updateOne({ _id: req.params.cardId }, { $pull: { likes: req.user } }, { new: true })
     .orFail(() => new NotFoundError('Запрашиваемая карточка не найдена'))
-    .then(() => res.status(200).send({ message: 'Лайк удален' }))
+    .then(() =>
+      Card.findOne({ _id: req.params.cardId }).then((updatedCard) =>
+        res.status(200).send({ data: updatedCard }),
+      ),
+    )
     .catch(next);
 };
 
