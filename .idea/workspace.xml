@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="862fb11c-cb40-4c90-94ca-f4111cec75cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/cards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/middlewares/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middlewares/validate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/request.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/request.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +35,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625849359492</updated>
-      <workItem from="1625849361057" duration="705000" />
+      <workItem from="1625849361057" duration="865000" />
     </task>
     <servers />
   </component>
