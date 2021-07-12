@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="862fb11c-cb40-4c90-94ca-f4111cec75cb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.eslintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/controllers/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/cards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/middlewares/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middlewares/validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/errors/AuthorizationError.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/errors/AuthorizationError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/errors/DataConflictError.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/errors/DataConflictError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/errors/ForbiddenError.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/errors/ForbiddenError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/errors/NotFoundError.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/errors/NotFoundError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/errors/ValidationError.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/errors/ValidationError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/middlewares/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middlewares/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/middlewares/logger.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middlewares/logger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +51,8 @@
       <workItem from="1625849361057" duration="1880000" />
       <workItem from="1625945439264" duration="1792000" />
       <workItem from="1626083173999" duration="98000" />
-      <workItem from="1626083866995" duration="132000" />
+      <workItem from="1626083866995" duration="360000" />
+      <workItem from="1626084501292" duration="692000" />
     </task>
     <servers />
   </component>
