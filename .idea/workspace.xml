@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="862fb11c-cb40-4c90-94ca-f4111cec75cb" name="Default Changelist" comment="" />
+    <list default="true" id="862fb11c-cb40-4c90-94ca-f4111cec75cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/middlewares/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middlewares/validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +42,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625849359492</updated>
-      <workItem from="1625849361057" duration="1167000" />
+      <workItem from="1625849361057" duration="1880000" />
+      <workItem from="1625945439264" duration="1792000" />
+      <workItem from="1626083173999" duration="98000" />
+      <workItem from="1626083866995" duration="132000" />
     </task>
     <servers />
   </component>

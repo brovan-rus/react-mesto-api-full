@@ -1,7 +1,7 @@
 {
   "name": "express-mesto",
   "version": "1.0.0",
-  "description": "Yandex Praktikum student's project backend api",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
@@ -9,13 +9,16 @@
     "lint": "npx eslint ."
   },
   "keywords": [],
-  "author": "Konstantin Brovtsev",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
-    "nodemon": "^2.0.7"
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.1"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
