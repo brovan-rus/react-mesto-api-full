@@ -100,7 +100,7 @@ function App() {
         setCards(answer.data.reverse());
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [isLoggedIn]);
 
   React.useEffect(() => {
     if (localStorage.getItem("jwt")) {
@@ -180,8 +180,7 @@ function App() {
 
   const handleRegister = (email, password) => {
     signUp(email, password)
-      .then((res) => {
-        setIsLoggedIn(true);
+      .then(() => {
         setIsInfoTooltipPopupOpen(true);
         setIsRegistrationSuccess(true);
         setUserEmail(email);
